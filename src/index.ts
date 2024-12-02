@@ -1,5 +1,5 @@
 import express, { Request, Response } from 'express';
-import { SheetService } from './services/sheet.service';
+import { SheetService } from './services/sheet.service.js';
 
 const app = express();
 app.use(express.json());

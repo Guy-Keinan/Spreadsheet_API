@@ -1,4 +1,4 @@
-import { Sheet, Cell, Column } from '../models/sheet.model';
+import { Sheet, Cell, Column } from '../models/sheet.model.js';
 import { v4 as uuidv4 } from 'uuid';
 
 export class SheetService {
@@ -43,7 +43,7 @@ export class SheetService {
             let resolvedValue;
             if (!sheet) throw new Error('Sheet not found.');
 
-            const column = sheet.columns.find((col) => col.name === columnName);
+            const column = sheet.columns.find((col: any) => col.name === columnName);
             if (!column) throw new Error('Column not found.');
 
             const cellKey = `${columnName}:${rowIndex}`;
